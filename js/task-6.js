@@ -6,20 +6,16 @@ const products = [
 ];
 
 const calculateTotalPrice = function(allProducts, productName) {
-  let array;
-  let element;
+  let product;
+  // let element;
   let totalPrice;
   for (let i = 0; i < allProducts.length; i += 1) {
-    array = allProducts[i];
-
-    // eslint-disable-next-line
-    for (element in array) {
-      element = Object.values(array);
-      if (element.includes(productName)) {
-        totalPrice = array.price * array.quantity;
-      }
+    product = allProducts[i];
+    if (product.name === productName) {
+      totalPrice = product.price * product.quantity;
     }
   }
+
   return totalPrice;
 };
 
